@@ -1,0 +1,227 @@
+---
+title: "Reproducible workflows in R"
+author: "Sam Langton, Amsterdam UMC"
+date: "28 May, 2024"
+format:
+  revealjs:
+    auto-stretch: false
+editor: visual
+editor_options: 
+  chunk_output_type: console
+date-format: long
+---
+
+## Why bother?
+
+- Yourself
+- Your collaborators
+- The scientific community
+- Stakeholders (e.g., the public)
+
+## {}
+
+<center>
+![](img/drake.png){width=800}
+</center>
+
+## Focus your energy
+
+1. Project folders
+2. Options in RStudio
+3. The `here` package
+3. `renv`
+4. Quarto
+
+## Project folders
+
+<br>
+<br>
+
+<center>
+![Source: [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)](img/setwd.png){width=700}
+</center>
+
+## Project folders
+
+<br>
+
+<center>
+
+![](img/project_screenshot.png){width=700}
+
+<br>
+
+![](img/folder_screenshot.png){width=800}
+
+</center>
+
+## Project folders
+
+Avoids this:
+
+```{r, eval = FALSE, echo = TRUE}
+setwd("C:/SamL/my_projects/ridiculous_folder_name/data")
+
+raw_data_df <- read_csv("raw_records.csv")
+```
+
+<br>
+And this:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
+```
+
+<br>
+
+And instead:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("data/raw_records.csv")
+```
+
+</center>
+
+## Dream scenario
+
+<br>
+
+<br>
+
+<center>
+
+`Ctrl + shift + F10`
+
+<br>
+
+`Ctrl + A` 
+
+<br>
+
+`Ctrl + Enter`
+
+</center>
+
+## Options in RStudio
+
+<br>
+
+<center>
+![](img/global_options.png){width=700}
+
+_Workspaces are pure evil. Turn them off._
+
+
+## `here` package
+
+Bad:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
+```
+
+<br>
+
+Good:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("data/raw_records.csv")
+```
+
+<br>
+
+Even better:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv(
+  here("data", "raw_records.csv")
+)
+```
+
+
+## {renv}
+
+<center>
+
+![](img/renv.png){width=400}
+
+[Read this](https://rstudio.github.io/renv/ )
+
+</center>
+
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width=1000}
+
+
+
+## Summary
+
+:::: {.columns}
+
+::: {.column width="50%"}
+DOs
+
+- Use project files
+- Use `here` for working directories
+- Use `renv` to manage package versions
+- Use Quarto 
+
+:::
+
+
+::: {.column width="50%"}
+DON'Ts
+
+- Use `setwd()`
+- Save workspaces
+- Manually copy results
+
+:::
+
+::::
+
+## Thanks for listening!
+
+<br>
+
+<br>
+
+<center>
+
+Questions? Suggestions? Want to know more?
+
+<br>
+
+<br>
+
+Sam Langton
+
+s.h.langton@amsterdamumc.nl
+
+www.samlangton.info
+
+
+
+
+
+
