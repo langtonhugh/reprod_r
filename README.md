@@ -1,2 +1,2 @@
-# reprod_r
+Material on reproducible workflows in R. 
  
