@@ -1,6 +1,6 @@
 ---
 title: "Reproducible workflows in R"
-author: "Sam Langton, Amsterdam UMC"
+author: "Sam Langton -- Amsterdam UMC"
 date: "28 May, 2024"
 format:
   revealjs:
@@ -74,7 +74,7 @@ raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_rec
 
 <br>
 
-And instead:
+But instead:
 
 ```{r, eval = FALSE, echo = TRUE}
 raw_data_df <- read_csv("data/raw_records.csv")
@@ -220,8 +220,17 @@ s.h.langton@amsterdamumc.nl
 
 www.samlangton.info
 
+## Extras
 
+#### Assumed:
 
+- Documentation 
+- Linear scripts
+- Comment your code
+
+#### Optional bonus points:
+
+- Version control (e.g., GitHub)
 
 
 
