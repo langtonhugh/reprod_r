@@ -21,12 +21,18 @@ date-format: long
 ## Tell me!
 
 <br>
-
 <br>
-
 <center>
 
-What do you do to ~~ensure~~ maximize the chances that your analyses are reproducible?
+Why does your code break?
+
+## Tell me!
+
+<br>
+<br>
+<center>
+
+How do you ~~ensure~~ maximize the chances that your analyses are reproducible?
 
 </center>
 
@@ -239,6 +245,7 @@ www.samlangton.info
 
 - Documentation 
 - Linear scripts
+- Function conflicts
 - Comment your code
 
 #### Optional bonus points:
