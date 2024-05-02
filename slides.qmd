@@ -18,6 +18,18 @@ date-format: long
 - The scientific community
 - Stakeholders (e.g., the public)
 
+## Tell me!
+
+<br>
+
+<br>
+
+<center>
+
+What do you do to ~~ensure~~ maximize the chances that your analyses are reproducible?
+
+</center>
+
 ## {}
 
 <center>
@@ -145,7 +157,7 @@ raw_data_df <- read_csv(
 
 ![](img/renv.png){width=400}
 
-[Read this](https://rstudio.github.io/renv/ )
+[Read this](https://rstudio.github.io/renv/ ).
 
 </center>
 
@@ -199,6 +211,7 @@ DON'Ts
 :::
 
 ::::
+
 
 ## Thanks for listening!
 
