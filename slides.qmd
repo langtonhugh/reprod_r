@@ -17,8 +17,6 @@ date-format: long
 
 ::: {.column width="60%"}
 
-<br>
-
 - Software/data consultant in RDM
 - Research background: spatial patterning of crime
 - R enthusiast
@@ -30,9 +28,9 @@ date-format: long
 
 <center>
 
-![](img/crime_map.png){width=300}
+![](https://github.com/langtonhugh/website_academic/blob/master/content/authors/admin/avatar.jpg?raw=true){width=200}
 
-![](https://raw.githubusercontent.com/langtonhugh/website_academic/master/content/authors/admin/avatar.jpg?token=GHSAT0AAAAAACREZVWUYAHYKWASUU7CERCUZSLGJYA){width=200}
+![](img/crime_map.png){width=300}
 
 </center>
 
