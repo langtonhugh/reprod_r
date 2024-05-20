@@ -1,3 +1,6 @@
+# Notes folder.
+notes/*
+
 # History files
 .Rhistory
 .Rapp.history
