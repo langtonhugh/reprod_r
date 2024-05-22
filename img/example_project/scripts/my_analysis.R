@@ -26,3 +26,6 @@ ggplot(data = diamonds_sample_df) +
 
 # Save the plot.
 ggsave(filename = "results/my_plot.png", height = 8, width = 10, unit = "cm")
+
+# Test.
+tidyr::pivot_longer()

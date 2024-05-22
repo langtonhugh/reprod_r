@@ -59,7 +59,11 @@ Why does your code break?
 
 <center>
 
-Why have you ended up with different results to last time?
+Have you ever ended up with different results to last time?
+
+<Br>
+
+Did you know why?
 
 ## Tell me!
 
@@ -292,11 +296,12 @@ s.h.langton\@amsterdamumc.nl
 
 #### Assumed:
 
--   Documentation
--   Linear scripts
--   Function conflicts
--   Comment your code
+- Script _everything_ ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
+- Documentation
+- Linear scripts
+- Function conflicts
+- Comment your code
 
 #### Bonus points:
 
--   Version control (e.g., GitHub)
+- Version control (e.g., GitHub)
