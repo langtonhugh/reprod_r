@@ -51,7 +51,7 @@ date-format: long
 
 <center>
 
-Why does your code break?
+Why does your (or your colleagues') code break?
 
 ## Tell me!
 
@@ -59,17 +59,17 @@ Why does your code break?
 
 <center>
 
-Have you ever ended up with different results to last time?
+Have you ever ended up with different results to the last run?
 
 <Br>
 
 Did you know why?
 
-## Tell me!
+<!-- ## Tell me! -->
 
-<br> <br>
+<!-- <br> <br> -->
 
-<center>How do you ~~ensure~~ maximize the chances that your analyses are reproducible?</center>
+<!-- <center>How do you ~~ensure~~ maximize the chances that your analyses are reproducible?</center> -->
 
 ## 
 
