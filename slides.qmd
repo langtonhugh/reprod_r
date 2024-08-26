@@ -14,36 +14,30 @@ date-format: long
 ## Who am I?
 
 ::: columns
-
 ::: {.column width="60%"}
-
-- Software/data consultant in RDM
-- Research background: spatial patterning of crime
-- R enthusiast
-- Here to make reproducibility easier!
-
+-   Software/data consultant in RDM
+-   Research background: spatial patterning of crime
+-   R enthusiast
+-   Here to make reproducibility easier!
 :::
 
 ::: {.column width="40%"}
-
 <center>
 
-![](https://github.com/langtonhugh/website_academic/blob/master/content/authors/admin/avatar.jpg?raw=true){width=200}
+![](https://github.com/langtonhugh/website_academic/blob/master/content/authors/admin/avatar.jpg?raw=true){width="200"}
 
-![](img/crime_map.png){width=300}
+![](img/crime_map.png){width="300"}
 
 </center>
-
 :::
-
 :::
 
 ## Reproducibility: why bother?
 
-- Yourself
-- Your collaborators
-- The scientific community
-- Stakeholders (e.g., the public)
+-   Yourself
+-   Your collaborators
+-   The scientific community
+-   Stakeholders (e.g., the public)
 
 ## Tell me!
 
@@ -203,15 +197,15 @@ raw_data_df <- read_csv(
 
 ## `renv` demonstration
 
-1. Create a project file
-2. Do some stuff
-3. `renv::init()`
-4. Do some more stuff
-5. `renv::snapshot()`
-6. Share with someone
-7. `renv::restore()`
-8. Do some other stuff
-9. Go to point 5...
+1.  Create a project file
+2.  Do some stuff
+3.  `renv::init()`
+4.  Do some more stuff
+5.  `renv::snapshot()`
+6.  Share with someone
+7.  `renv::restore()`
+8.  Do some other stuff
+9.  Go to point 5...
 
 ## Quarto
 
@@ -292,17 +286,16 @@ s.h.langton\@amsterdamumc.nl
 
 [www.samlangton.info](www.samlangton.info)
 
-
 ## Extras
 
 #### Assumed:
 
-- Script _everything_ ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
-- Documentation
-- Linear scripts
-- Function conflicts
-- Comment your code
+-   Script *everything* ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
+-   Documentation
+-   Linear scripts
+-   Function conflicts
+-   Comment your code
 
 #### Bonus points:
 
-- Version control (e.g., GitHub)
+-   Version control (e.g., GitHub)
