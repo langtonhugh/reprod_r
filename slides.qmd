@@ -11,8 +11,6 @@ editor_options:
 date-format: long
 ---
 
-# a change
-
 ## Who am I?
 
 ::: columns
