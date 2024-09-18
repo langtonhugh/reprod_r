@@ -1,0 +1,289 @@
+---
+title: "Tips for reproducibility in R"
+author: "RUM-UMC"
+date: "25 September, 2024"
+format:
+  revealjs:
+    auto-stretch: false
+editor: visual
+editor_options: 
+  chunk_output_type: console
+date-format: long
+---
+
+## 
+
+<center>![](img/drake.png){width="800"}</center>
+
+## Focus your energy
+
+1. Project folders
+2. Options in RStudio
+3. The `here` package
+4. `renv`
+5. Quarto
+
+<!-- ## Script _everything_ -->
+
+<!-- <br> -->
+
+<!-- If you **can** script it, then **script it**. -->
+
+<!-- <br> -->
+
+<!-- "R is a statistics software" - well, partly... it can also load, wrangle, visualise, analyse, export, and [report](https://quarto.org/docs/computations/r.html). -->
+
+<!-- <br> -->
+
+<!-- RStudio can also support other languages in one project (e.g., [Python](https://posit.co/blog/three-ways-to-program-in-python-with-rstudio/)) -->
+
+## Project folders
+
+<br> <br>
+
+<center>
+
+![Source: [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)](img/setwd.png){width="700"}
+
+</center>
+
+## Project folders
+
+<br>
+
+<center>
+
+![](img/project_screenshot.png){width="700"}
+
+<br>
+
+![](img/folder_screenshot.png){width="800"}
+
+</center>
+
+## Project folders
+
+Avoids this:
+
+```{r, eval = FALSE, echo = TRUE}
+setwd("C:/SamL/my_projects/ridiculous_folder_name/data")
+
+raw_data_df <- read_csv("raw_records.csv")
+```
+
+<br> And this:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
+```
+
+<br>
+
+But instead:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("data/raw_records.csv")
+```
+
+</center>
+
+<!-- ## Options in RStudio -->
+
+<!-- <br> -->
+
+<!-- <br> -->
+
+<!-- <center> -->
+
+<!-- `Ctrl + shift + F10` -->
+
+<!-- <br> -->
+
+<!-- `Ctrl + A` -->
+
+<!-- <br> -->
+
+<!-- `Ctrl + Enter` -->
+
+<!-- </center> -->
+
+## Options in RStudio
+
+<br>
+
+<center>
+
+![](img/global_options.png){width="700"}
+
+*Workspaces are pure evil. Turn them off.*
+
+## `here` package
+
+Bad:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
+```
+
+<br>
+
+Good:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("data/raw_records.csv")
+```
+
+<br>
+
+Even better:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv(
+  here("data", "raw_records.csv")
+)
+```
+
+## `renv`
+
+<center>
+
+![](img/renv.png){width="400"}
+
+[Read this](https://rstudio.github.io/renv/).
+
+</center>
+
+## `renv` demonstration
+
+## `renv` demonstration
+
+1.  Create a project file
+2.  Do some stuff
+3.  `renv::init()`
+4.  Do some more stuff
+5.  `renv::snapshot()`
+6.  Share with someone
+7.  `renv::restore()`
+8.  Do some other stuff
+9.  Go to point 5...
+
+## `renv` within OneView
+
+<br>
+
+<center> **Activating the virtual environment causes RStudio to crash.** </center>
+
+<br>
+
+But a low-effort alternative:
+
+1. Create a project file
+2. Do some stuff
+3. When you're done: `renv::snapshot()`
+
+## `renv` within OneView
+
+<br>
+
+<center> **Activating the virtual environment causes RStudio to crash.** </center>
+
+<br>
+
+Similar alternative: save your session info.
+
+<br>
+
+```{r, eval = F, echo = T}
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")`
+```
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width="1000"}
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width="1000"}
+
+It also makes everything [look better](https://github.com/danieltomasz/hikmah-academic-quarto?tab=readme-ov-file).
+
+## Summary
+
+::: columns
+::: {.column width="50%"}
+DOs
+
+-   Use project files
+-   Use `here` for working directories
+-   Use `renv` to manage package versions
+-   Use Quarto
+:::
+
+::: {.column width="50%"}
+DON'Ts
+
+-   Use `setwd()`
+-   Save workspaces
+-   Manually copy results
+:::
+:::
+
+## Advertisement: CODECHECK
+
+<center>
+
+<br>
+
+Want a 'second pair of eyes' on your R workflow?
+
+And a 'bonus point' for a journal submission?
+
+<br>
+
+
+![](img/codecheck_logo.svg){width="300" fig-align="center"}
+
+Then [email me](mailto:s.h.langton@amsterdamumc.nl) or ping us via ServiceNow ('Research Software Management')
+
+</center>
+
+
+## Extras
+
+### Assumed:
+
+-   Script *everything* ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
+-   Documentation
+-   Linear scripts
+-   Function conflicts
+-   Comment your code
+
+### Bonus points:
+
+-   Version control (e.g., GitHub)
