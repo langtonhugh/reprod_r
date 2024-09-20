@@ -17,25 +17,25 @@ date-format: long
 
 ## Focus your energy
 
-1. Project folders
-2. Options in RStudio
-3. The `here` package
+1. Script *everything* ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
+2. Project folders
+3. Options in RStudio
 4. `renv`
 5. Quarto
 
-<!-- ## Script _everything_ -->
+## Script _everything_
 
-<!-- <br> -->
+<br>
 
-<!-- If you **can** script it, then **script it**. -->
+If you **can** script it, then **script it**.
 
-<!-- <br> -->
+<br>
 
-<!-- "R is a statistics software" - well, partly... it can also load, wrangle, visualise, analyse, export, and [report](https://quarto.org/docs/computations/r.html). -->
+"R is a statistics software" `r emo::ji("angry")` Well, partly... but it can (probably) be used for your [entire computational workflow](https://wec.wur.nl/dse/images/11/tidyverse%20workflow.png).
 
-<!-- <br> -->
+<br>
 
-<!-- RStudio can also support other languages in one project (e.g., [Python](https://posit.co/blog/three-ways-to-program-in-python-with-rstudio/)) -->
+RStudio can also support other languages in one project (e.g., [Python](https://posit.co/blog/three-ways-to-program-in-python-with-rstudio/))
 
 ## Project folders
 
@@ -117,31 +117,31 @@ raw_data_df <- read_csv("data/raw_records.csv")
 
 *Workspaces are pure evil. Turn them off.*
 
-## `here` package
+<!-- ## `here` package -->
 
-Bad:
+<!-- Bad: -->
 
-```{r, eval = FALSE, echo = TRUE}
-raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
-```
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+<!-- raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv") -->
+<!-- ``` -->
 
-<br>
+<!-- <br> -->
 
-Good:
+<!-- Good: -->
 
-```{r, eval = FALSE, echo = TRUE}
-raw_data_df <- read_csv("data/raw_records.csv")
-```
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+<!-- raw_data_df <- read_csv("data/raw_records.csv") -->
+<!-- ``` -->
 
-<br>
+<!-- <br> -->
 
-Even better:
+<!-- Even better: -->
 
-```{r, eval = FALSE, echo = TRUE}
-raw_data_df <- read_csv(
-  here("data", "raw_records.csv")
-)
-```
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+<!-- raw_data_df <- read_csv( -->
+<!--   here("data", "raw_records.csv") -->
+<!-- ) -->
+<!-- ``` -->
 
 ## `renv`
 
@@ -239,10 +239,10 @@ It also makes everything [look better](https://github.com/danieltomasz/hikmah-ac
 ::: {.column width="50%"}
 DOs
 
--   Use project files
--   Use `here` for working directories
--   Use `renv` to manage package versions
--   Use Quarto
+- Script **everything**  
+- Use project files
+- Use `renv` to manage package versions
+- Use Quarto
 :::
 
 ::: {.column width="50%"}
@@ -278,7 +278,6 @@ Then [email me](mailto:s.h.langton@amsterdamumc.nl) or ping us via ServiceNow ('
 
 ### Assumed:
 
--   Script *everything* ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
 -   Documentation
 -   Linear scripts
 -   Function conflicts
@@ -286,4 +285,5 @@ Then [email me](mailto:s.h.langton@amsterdamumc.nl) or ping us via ServiceNow ('
 
 ### Bonus points:
 
+- `here` package
 -   Version control (e.g., GitHub)
