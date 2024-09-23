@@ -1,13 +1,10 @@
 # Load packages.
-library(here)
 library(readr)
 library(dplyr)
 library(ggplot2)
 
 # Load data.
-diamonds_df <- read_csv(
-  here("data", "diamonds_data.csv")
-)
+diamonds_df <- read_csv("data/diamonds_data.csv")
 
 # Take a look.
 glimpse(diamonds_df)
@@ -27,5 +24,3 @@ ggplot(data = diamonds_sample_df) +
 # Save the plot.
 ggsave(filename = "results/my_plot.png", height = 8, width = 10, unit = "cm")
 
-# Test.
-tidyr::pivot_longer()
