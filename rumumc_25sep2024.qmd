@@ -11,6 +11,16 @@ editor_options:
 date-format: long
 ---
 
+## What is reproducibility?
+
+> "We define reproducible research as work that can be independently recreated from the same data and the same code that the original team used."
+
+<center>
+
+![Source: [The Turing Way](https://book.the-turing-way.org/reproducible-research/overview/overview-definitions)](https://book.the-turing-way.org/_images/reproducible-matrix.jpg){width="500"}
+
+</center>
+
 ## 
 
 <center>![](img/drake.png){width="800"}</center>
@@ -283,10 +293,9 @@ Then [email me](mailto:s.h.langton@amsterdamumc.nl) or ping us via ServiceNow ('
 
 ### Assumed:
 
--   Documentation
+-   Documentation (including comments)
 -   Linear scripts
 -   Function conflicts
--   Comment your code
 
 ### Bonus points:
 
