@@ -1,0 +1,347 @@
+---
+title: "Tips for reproducibility in R"
+author: "Sam Langton -- Amsterdam UMC"
+subtitle: "<br> <br> <br> TU Delft, 20 November 2024"
+format:
+  revealjs:
+    auto-stretch: false
+editor: visual
+editor_options: 
+  chunk_output_type: console
+date-format: long
+---
+
+## What is reproducibility?
+
+> "We define reproducible research as work that can be independently recreated from the same data and the same code that the original team used."
+
+<center>
+
+![Source: [The Turing Way](https://book.the-turing-way.org/reproducible-research/overview/overview-definitions)](https://book.the-turing-way.org/_images/reproducible-matrix.jpg){width="500"}
+
+</center>
+
+## A personal tale
+
+<br>
+
+Publishing an [open science replication paper](https://www.tandfonline.com/doi/full/10.1080/15614263.2022.2102494).
+
+<br>
+
+<center>![](img/paper_header.png){width="900"}</center>
+
+## 
+
+<center>![](img/spongebob.png){width="450"}</center>
+
+## A personal tale
+
+<br>
+
+...and I could not reproduce the findings.
+
+<br>
+
+<br>
+
+<br>
+
+(It was fixed, but with [some effort](https://github.com/langtonhugh/demand_detroit) and a bit of luck).
+
+## 
+
+<center>![](img/drake.png){width="800"}</center>
+
+## Focus your energy
+
+1.  Script *everything* ([De Graaff., 2021](https://www.dropbox.com/s/vn7rn9m5ht2miol/reproducibility.pdf?e=1&dl=0))
+2.  Project folders
+3.  Options in RStudio
+4.  `renv`
+5.  Quarto
+
+## Script *everything*
+
+<br>
+
+"R is a statistics software" `r emo::ji("angry")` Well, partly... but it can (probably) be used for your [entire computational workflow](https://wec.wur.nl/dse/images/11/tidyverse%20workflow.png).
+
+<br>
+
+If you **can** script it, then **script it**.
+
+<br>
+
+RStudio can also support other languages (e.g., [Python](https://posit.co/blog/three-ways-to-program-in-python-with-rstudio/))
+
+## Project folders
+
+<br> <br>
+
+<center>
+
+![Source: [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)](img/setwd.png){width="700"}
+
+</center>
+
+## Project folders
+
+<br>
+
+<center>
+
+![](img/project_screenshot.png){width="700"}
+
+<br>
+
+![](img/folder_screenshot.png){width="800"}
+
+</center>
+
+## Project folders
+
+Avoids this:
+
+```{r, eval = FALSE, echo = TRUE}
+setwd("C:/SamL/my_projects/ridiculous_folder_name/data")
+
+raw_data_df <- read_csv("raw_records.csv")
+```
+
+<br> And this:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv")
+```
+
+<br>
+
+But instead:
+
+```{r, eval = FALSE, echo = TRUE}
+raw_data_df <- read_csv("data/raw_records.csv")
+```
+
+</center>
+
+<!-- ## Options in RStudio -->
+
+<!-- <br> -->
+
+<!-- <br> -->
+
+<!-- <center> -->
+
+<!-- `Ctrl + shift + F10` -->
+
+<!-- <br> -->
+
+<!-- `Ctrl + A` -->
+
+<!-- <br> -->
+
+<!-- `Ctrl + Enter` -->
+
+<!-- </center> -->
+
+## Options in RStudio
+
+<br>
+
+<center>
+
+![](img/global_options.png){width="700"}
+
+*Workspaces are pure evil. Turn them off.*
+
+<!-- ## `here` package -->
+
+<!-- Bad: -->
+
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+
+<!-- raw_data_df <- read_csv("C:/SamL/my_projects/ridiculous_folder_name/data/raw_records.csv") -->
+
+<!-- ``` -->
+
+<!-- <br> -->
+
+<!-- Good: -->
+
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+
+<!-- raw_data_df <- read_csv("data/raw_records.csv") -->
+
+<!-- ``` -->
+
+<!-- <br> -->
+
+<!-- Even better: -->
+
+<!-- ```{r, eval = FALSE, echo = TRUE} -->
+
+<!-- raw_data_df <- read_csv( -->
+
+<!--   here("data", "raw_records.csv") -->
+
+<!-- ) -->
+
+<!-- ``` -->
+
+## `renv`
+
+<center>
+
+![](img/renv.png){width="400"}
+
+[Read this](https://rstudio.github.io/renv/).
+
+</center>
+
+## `renv` demonstration
+
+## `renv` demonstration
+
+1.  Create a project file
+2.  `renv::init()`
+3.  Do some stuff
+4.  `renv::snapshot()`
+5.  Share with someone
+6.  `renv::restore()`
+7.  Do some other stuff
+8.  Go to point 4...
+
+## A low-effort alternative
+
+<br>
+
+Saving your **session info** is the **least** we can do! 
+
+<br>
+
+<br>
+
+```{r, eval = F, echo = T}
+writeLines(capture.output(sessionInfo()), "sessionInfo.txt")`
+```
+
+## A (better?) alternative: `rix`
+
+<br>
+
+New (to me) but claims to offer advantages over `renv`.
+
+<br>
+
+Have [a read](https://cran.r-project.org/web/packages/rix/index.html) or [watch a tutorial](https://www.youtube.com/watch?v=tM4JrCWZpwA) to find out more.
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width="1000"}
+
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width="1000"}
+
+It also makes everything [look better](https://github.com/danieltomasz/hikmah-academic-quarto?tab=readme-ov-file).
+
+## Summary
+
+::: columns
+::: {.column width="50%"}
+DOs
+
+-   Script **everything**\
+-   Use project files
+-   Use `renv` to manage package versions
+-   Use Quarto
+:::
+
+::: {.column width="50%"}
+DON'Ts
+
+-   Use `setwd()`
+-   Save workspaces
+-   Manually copy results
+:::
+:::
+
+## Extras
+
+### Fundamentals:
+
+- Data management
+- Documentation (including comments)
+- Linear scripts
+- Function conflicts
+
+### Bonus points:
+
+- `here` package
+- Version control (e.g., GitHub)
+
+## Advertisement: CODECHECK
+
+<center>
+
+<br>
+
+Want a 'second pair of eyes' on your R workflow?
+
+And a 'bonus point' for a journal submission?
+
+<br>
+
+![](img/codecheck_logo.svg){width="400" fig-align="center"}
+
+</center>
+
+## Thanks for listening!
+
+<br>
+
+<center>
+
+#### Questions? Suggestions? Comments?
+
+<br>
+
+#### Slides
+
+[https://github.com/langtonhugh/reprod_r]()
+
+<br>
+
+#### Contact
+
+s.h.langton\@amsterdamumc.nl
+
+[www.samlangton.info](www.samlangton.info)
+
