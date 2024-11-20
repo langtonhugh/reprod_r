@@ -3,12 +3,13 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(sf)
+library(tidyr)
 
 # Set working directory.
-# setwd("C:/Users/P090168/OneDrive - Amsterdam UMC/Documenten/ldcc2/presentations/reprod_r/example_project/data")
+setwd("C:/Users/P090168/OneDrive - Amsterdam UMC/Documenten/ldcc2/presentations/reprod_r/example_project/data")
 
 # Load data.
-diamonds_df <- read_csv("data/diamonds_data.csv")
+diamonds_df <- read_csv("diamonds_data.csv")
 
 # Take a look.
 glimpse(diamonds_df)
@@ -26,5 +27,5 @@ ggplot(data = diamonds_sample_df) +
   geom_point(mapping = aes(x = x, y = carat, colour = clarity))
 
 # Save the plot.
-ggsave(filename = "../results/my_plot.png", height = 8, width = 10, unit = "cm")
+ggsave(filename = "results/my_plot.png", height = 8, width = 10, unit = "cm")
 

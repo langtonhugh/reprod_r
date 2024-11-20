@@ -11,6 +11,27 @@ editor_options:
 date-format: long
 ---
 
+## Who am I?
+
+::: columns
+::: {.column width="60%"}
+-   Research software consultant at AUMC
+-   Research background: spatial patterning of crime
+-   R enthusiast
+-   Promoting & training open software
+:::
+
+::: {.column width="40%"}
+<center>
+
+![](https://github.com/langtonhugh/website_academic/blob/master/content/authors/admin/avatar.jpg?raw=true){width="200"}
+
+![](img/crime_map.png){width="300"}
+
+</center>
+:::
+:::
+
 ## What is reproducibility?
 
 > "We define reproducible research as work that can be independently recreated from the same data and the same code that the original team used."
@@ -226,25 +247,15 @@ Saving your **session info** is the **least** we can do!
 writeLines(capture.output(sessionInfo()), "sessionInfo.txt")`
 ```
 
-## A (better?) alternative: `rix`
+<!-- ## A (better?) alternative: `rix` -->
 
-<br>
+<!-- <br> -->
 
-New (to me) but claims to offer advantages over `renv`.
+<!-- New (to me) but claims to offer advantages over `renv`. -->
 
-<br>
+<!-- <br> -->
 
-Have [a read](https://cran.r-project.org/web/packages/rix/index.html) or [watch a tutorial](https://www.youtube.com/watch?v=tM4JrCWZpwA) to find out more.
-
-## Quarto
-
-<br>
-
-```{r}
-effiency_number <- 200
-```
-
-Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+<!-- Have [a read](https://cran.r-project.org/web/packages/rix/index.html) or [watch a tutorial](https://www.youtube.com/watch?v=tM4JrCWZpwA) to find out more. -->
 
 ## Quarto
 
@@ -255,8 +266,6 @@ effiency_number <- 200
 ```
 
 Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
-
-![](img/quarto.png){width="1000"}
 
 ## Quarto
 
@@ -270,7 +279,19 @@ Using Quarto allows you to make cool documents (and slideshows) while automating
 
 ![](img/quarto.png){width="1000"}
 
-It also makes everything [look better](https://github.com/danieltomasz/hikmah-academic-quarto?tab=readme-ov-file).
+## Quarto
+
+<br>
+
+```{r}
+effiency_number <- 200
+```
+
+Using Quarto allows you to make cool documents (and slideshows) while automating your results, making you approximately `r effiency_number`% more efficient.
+
+![](img/quarto.png){width="1000"}
+
+It also makes everything [look better](https://quarto.org/docs/gallery/).
 
 ## Summary
 
@@ -297,8 +318,7 @@ DON'Ts
 
 ### Fundamentals:
 
-- Data management
-- Documentation (including comments)
+- Documentation (e.g., README, comments)
 - Linear scripts
 - Function conflicts
 
@@ -307,21 +327,28 @@ DON'Ts
 - `here` package
 - Version control (e.g., GitHub)
 
-## Advertisement: CODECHECK
+## Advertisements!
 
 <center>
 
 <br>
 
-Want a 'second pair of eyes' on your R workflow?
-
-And a 'bonus point' for a journal submission?
-
-<br>
-
+::: columns
+::: {.column width="50%"}
 ![](img/codecheck_logo.svg){width="400" fig-align="center"}
 
+Upcoming event [in Rotterdam](https://codecheck.org.uk/nl/workshop3.html).
+:::
+
+::: {.column width="50%"}
+![](img/NLRN.png){width="400" fig-align="center"}
+
+Dutch Reproducibility Network event [in Groningen](https://reproducibilitynetwork.nl/event/nlrnsymposium2024/). 
+:::
+:::
+
 </center>
+
 
 ## Thanks for listening!
 
